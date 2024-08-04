@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title>Advance Calculator</title> 
+
+    <style> 
+        table { 
+            border: 1px solid black; 
+            margin-left: auto; 
+            margin-right: auto; 
+        } 
+          
+        button[type="calculate"] { 
+            width: 100%; 
+            padding: 20px 40px; 
+            background-color: blue; 
+            color: white; 
+            font-size: 24px; 
+            font-weight: bold; 
+            border: none; 
+            border-radius: 5px; 
+        } 
+          
+        input[type="text"] { 
+            padding: 20px 30px; 
+            font-size: 24px; 
+            font-weight: bold; 
+            border: none; 
+            border-radius: 5px; 
+            border: 2px solid black; 
+        } 
+    </style> 
+</head> 
+  
+<body> 
+    <form action="index.php" method="post">
+    <table id="calcu"> 
+        
+<form method="post">
+    <?php if (isset($error)) : ?>
+      <p style="color: red;"><?php echo $error; ?></p>
+    <?php endif; ?>
+    <input type="number" name="num1" placeholder="Enter first number">
+    <select name="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="sqareroot">sqrt</option>
+      <option value="%">%</option>
+      <option value="square">^</option>
+    </select>
+    <input type="number" name="num2" placeholder="Enter second number">
+    <input type="submit" value="Calculate">
+  </form>
+  
+  <?php if (isset($result)) : ?>
+    <p>The result is: <?php echo $result; ?></p>
+  <?php endif; ?>
+  
+</body> 
+  
+</html>  
